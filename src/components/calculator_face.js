@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-class CalculatorFace extends Component {
+class CalculatorFace extends Component{
     render(){
         return(
-            <div className="calculatorBody">Calculator Body</div>
+            <div className="calculatorFace">CalcFace</div>
         );
     }
 }
