@@ -1,11 +1,36 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { buttonClick } from "../actions";
+import { bindActionCreators } from "redux";
 
-class CalculatorButton extends Component {
-    render(){
-        return(
-            <div>Button</div>
-        );
-    }
+class CalculatorButtons extends Component {
+  renderButtons() {
+    return this.props.buttons.map(button => {
+      return (
+        <div
+          onClick={() => this.props.buttonClick(button.face)}
+          key={button.face}
+          className="button"
+        >
+          {button.face}
+        </div>
+      );
+    });
+  }
+
+  render() {
+    return <div className="buttonContainer">{this.renderButtons()}</div>;
+  }
 }
 
-export default CalculatorButton;
+function mapStateToProps(state) {
+  return {
+    buttons: state.calculatorButtons
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ buttonClick }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CalculatorButtons);

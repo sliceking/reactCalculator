@@ -1,19 +1,16 @@
-import React, { Component } from 'react';
-import CalculatorFace from './calculator_face';
-import CalculatorButton from './calculator_button';
+import React, { Component } from "react";
+import CalculatorFace from "./calculator_face";
+import CalculatorButtons from "./calculator_button";
 
 class CalculatorBody extends Component {
-    renderButtons(){
-        
-    }
-
-    render(){
-        return(
-            <div className="calculatorBody">
-                <CalculatorFace />
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className="calculatorBody">
+        <CalculatorFace />
+        <CalculatorButtons />
+      </div>
+    );
+  }
 }
 
 export default CalculatorBody;

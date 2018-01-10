@@ -1,11 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { connect } from "react-redux";
 
-class CalculatorFace extends Component{
-    render(){
-        return(
-            <div className="calculatorFace">CalcFace</div>
-        );
-    }
+class CalculatorFace extends Component {
+  render() {
+    console.log(this.props.faceState);
+    return <div className="calculatorFace">{this.props.faceState}</div>;
+  }
 }
 
-export default CalculatorFace;
+function mapStateToProps(state) {
+  return {
+    faceState: state.faceState
+  };
+}
+
+export default connect(mapStateToProps)(CalculatorFace);
