@@ -8,7 +8,13 @@ class CalculatorButtons extends Component {
     return this.props.buttons.map(button => {
       return (
         <div
-          onClick={() => this.props.buttonClick(button.face)}
+          onClick={
+            button.face === "="
+              ? () => this.props.equalsClick()
+              : button.face === "C"
+                ? () => this.props.clearClick()
+                : () => this.props.buttonClick(button.face)
+          }
           key={button.face}
           className="button"
         >
