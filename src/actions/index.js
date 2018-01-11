@@ -16,7 +16,7 @@ export function equalsClick() {
   };
 }
 
-export function clearClicked() {
+export function clearClick() {
   return {
     type: CLEAR_CLICK,
     payload: ""

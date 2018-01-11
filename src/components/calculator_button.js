@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { buttonClick } from "../actions";
+import { buttonClick, equalsClick, clearClick } from "../actions";
 import { bindActionCreators } from "redux";
 
 class CalculatorButtons extends Component {
@@ -30,7 +30,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ buttonClick }, dispatch);
+  return bindActionCreators({ buttonClick, equalsClick, clearClick }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CalculatorButtons);
